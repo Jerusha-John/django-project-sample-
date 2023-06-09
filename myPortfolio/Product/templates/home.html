@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    margin: auto;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 20px 0px;
+}
+
+nav ul li {
+    margin: 10px 20px;
+    font-family: century;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    font-weight: bold;
+    transition: all .5s ease;
+}
+
+div ul a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    font-weight: bold;
+    transition: all .5s ease;
+}
+
+div ul a:hover {
+    background-color: white;
+    color: black;
+  
+
+}
+
+nav ul li a:hover{
+    background-color: white;
+    color: red;
+    box-shadow: 0 0 10px white;
+}
+
+#home{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 840px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url('{{ products.0.image }}') no-repeat center center/cover;
+    height: 900px;
+    width: 100%;
+    z-index: -4;
+    opacity: .9;
+}
+
+span {
+    color: white;
+    font-family: century;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.headings {
+    font-family: century;
+    font-size: 3rem;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.btn {
+    padding: 10px 35px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+    transition: .6s ease;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+    font-weight: bold;
+}
+        </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="about">About me</a></li>
+            <li><a href="skills">Portfolio</a></li>
+            <li><a href="contact">Contact me</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <div class="main">
+            <!-- <img src="{{ products.0.image }}" alt="{{ products.0.name }}"> -->
+            <h1 class="headings"> I AM <br> <span>{{products.0.name}}</span></h1>
+            <button class="btn">
+                
+                <ul>
+                    <a href="Resume.html">Download CV</a>
+
+                </ul>
+                
+            </button>
+        </div>
+    </section>
+</body>
+</html>
